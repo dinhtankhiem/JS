@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1 Challenge 1</title>
+</head>
+<body>
+    <div style=" width: 500px; background-color: aquamarine; border-radius:20px; justify-items: center;">
+        <div style="display: flex;">
+            <label for="MMass">MMass:</label>
+            <input id="MMass">
+        </div>
+        <div style="display: flex;">
+            <label for="MHeight">MHeight:</label>
+            <input id="MHeight">
+        </div>
+        <div style="display: flex;">
+            <label for="JMass">JMass:</label>
+            <input id="JMass">
+        </div>
+        <div style="display: flex;">
+            <label for="JHeight">JHeight:</label>
+            <input id="JHeight">
+        </div>
+
+        <button id="btnCal" style=" margin-top: 20px; padding: 10px; display: flex;">
+            Tính toán BMI
+        </button>
+
+        <div style="margin-top: 20px; font-weight: bold;">
+            <p>Mark's BMI: <span id="resM">...</span></p>
+            <p>John's BMI: <span id="resJ">...</span></p>
+        </div>
+
+    </div>
+    <script>
+        var btnCal = document.getElementById('btnCal');
+        btnCal.onclick = () => {
+            var MMass = document.getElementById('MMass').value;
+            var MHeight = document.getElementById('MHeight').value;
+            var JMass = document.getElementById('JMass').value;
+            var JHeight = document.getElementById('JHeight').value;
+
+            var MBMI = MMass/(MHeight*MHeight);
+            var JBMI = JMass/(JHeight*JHeight);
+            
+            document.getElementById('resM').innerHTML = MBMI;
+            document.getElementById('resJ').innerHTML = JBMI;
+
+            
+        }
+    </script>
+
+</body>
+</html>
