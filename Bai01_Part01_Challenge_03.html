@@ -6,17 +6,37 @@
     <title>Challenge 03</title>
 </head>
 <body>
-    <div style="display: flex; justify-content: center; background-color: bisque;">
-        <input type="number" id="DP1" placeholder="Dolphins diem 1">
-        <input type="number" id="DP2" placeholder="Dolphins diem 2">
-        <input type="number" id="DP3" placeholder="Dolphins diem 3">
-
-        <input type="number" id="KP1" placeholder="Koalas diem 1">
-        <input type="number" id="KP2" placeholder="Koalas diem 2">
-        <input type="number" id="KP3" placeholder="Koalas diem 3">
+    <div style=" justify-content: center; background-color: bisque;padding: 10px;">
+        <div>
+            <label for="DP1"></label>
+            <input type="number" id="DP1" placeholder="Dolphins diem 1">
+        </div>
+        <div>
+            <label for="DP2"></label>
+            <input type="number" id="DP2" placeholder="Dolphins diem 2">
+        </div>
+        <div>
+            <label for="DP3"></label>
+            <input type="number" id="DP3" placeholder="Dolphins diem 3">
+        </div>
+        <div>
+            <label for="KP1"></label>
+            <input type="number" id="KP1" placeholder="Koalas diem 1">
+        </div>
+        <div>
+            <label for="KP2"></label>
+            <input type="number" id="KP2" placeholder="Koalas diem 2">
+        </div>
+        <div>
+            <label for="KP3"></label>
+            <input type="number" id="KP3" placeholder="Koalas diem 3">
+        </div>
 
         <button id="btnCal" style=" margin-left: 20px; padding: 10px; display: flex;">
             So sanh
+        </button>
+
+        <p> <span style="color: red; font-weight: bold; margin-top: 30px;" id="result"></span></p>
     </div>
 
     <script>
@@ -32,13 +52,13 @@
             var KAvg = (Number(KP1) + Number(KP2) + Number(KP3)) / 3;
 
             if(DAvg > KAvg && DAvg >= 100){
-                alert("Dolphins win the trophy!");
+                document.getElementById('result').innerText = "Dolphins win the trophy!";
             } else if(KAvg > DAvg && KAvg >= 100){
-                alert("Koalas win the trophy!");
+                document.getElementById('result').innerText = "Koalas win the trophy!";
             } else if(DAvg === KAvg && DAvg >= 100 && KAvg >= 100){
-                alert("Both win the trophy!");
+                document.getElementById('result').innerText = "Both win the trophy!";
             } else {
-                alert("No one wins the trophy.");
+                document.getElementById('result').innerText = "No one wins the trophy.";
             }
 
         }
